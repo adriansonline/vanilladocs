@@ -3,13 +3,14 @@
 // Styleguide Modules.Navs
 
 .docs-nav {
-  font-size: 12px;
+  margin-bottom: @line-height-computed;
+  font-size: 14px;
 
   p {
     margin: @line-height-computed 0 0;
   }
 
-  &.affix {
+  /*&.affix {
     top: 30px;
   }
 
@@ -34,7 +35,7 @@
 
   &.affix-bottom {
     position: absolute;
-  }
+  }*/
 
   .nav {
     &:before,
@@ -43,14 +44,17 @@
     }
 
     li {
-      margin: 5px 0;
+      margin: 4px 0;
+
+      @media (max-width: @screen-xs-max) {
+        margin: 10px 0;
+      }
 
       > a {
         padding: 0;
         padding-right: 5px;
         line-height: @line-height-computed;
         color: #666;
-        border-right: transparent solid 2px;
 
         &:hover,
         &:focus {
@@ -61,19 +65,39 @@
 
       &.active > a {
         color: @brand-primary;
-        border-color: @brand-primary;
+        font-weight: bold;
       }
 
       &.active > .nav {
         display: block;
+        border-left: 1px solid @gray-lighter;
+
+        > .active > a {
+          position: relative;
+
+          &:before,
+          &:after {
+            position: absolute;
+            left: -16px;
+            content: "";
+          }
+
+          &:before {
+            top: -4px;
+            height: @line-height-computed + 8px;
+            border-left: 1px solid #fff;
+          }
+
+          &:after {
+            height: @line-height-computed;
+            border-left: 1px solid @brand-primary;
+          }
+        }
       }
 
       > .nav {
         display: none;
-
-        li > .nav {
-          padding-left: @padding-base-horizontal;
-        }
+        padding-left: @padding-base-horizontal;
       }
     }
   }
@@ -82,8 +106,7 @@
     margin-top: 0;
 
     > a {
-      font-weight: 700;
-      color: #aaa;
+      font-weight: bold
     }
   }
 }

@@ -4,9 +4,11 @@ layout: docs
 menu: Home
 ---
 
-You can contribute to these docs via the [GitHub repository](https://github.com/vanillaforums/VanillaDocs/).
+# Vanilla Forums Documentation
 
-Vanilla Forums consists of both an [open source project](http://github.com/vanillaforums.com/vanilla) and a [cloud hosting solution](http://vanillaforums.com). The documents cover five major areas:
+You can contribute to these docs via the [GitHub repository](https://github.com/vanilla/vanilladocs).
+
+Vanilla Forums consists of both an [open source project](https://github.com/vanilla/vanilla) and a [cloud hosting solution](http://vanillaforums.com). The documents cover five major areas:
 
 * [API](/api) - describes the exclusive API for cloud clients.
 * [Cloud Services](/cloud) - for cloud-based professional services.

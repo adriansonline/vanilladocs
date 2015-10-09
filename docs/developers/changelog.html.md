@@ -9,7 +9,51 @@ categories: ["Developers"]
 2.1
 ===
 
-### 2.1.0
+### 2.1.6
+*[Released 21 Nov 2014](http://vanillaforums.org/discussion/28555/vanilla-2-1-6-released)*
+
+* Security: Fixes an SQL injection vector.
+* Security: Adds a PDO option to harden against SQL injection.
+* Security: Improves the security of password resets by increasing token length and limiting them to 1 hour expiration.
+* Adds vBulletin 5.1 password hashing to allow seamless password migrations. All previous versions continue to be supported.
+
+### 2.1.5
+*[Released 31 Oct 2014](http://vanillaforums.org/discussion/28337/vanilla-2-1-5-released-and-2-0-18-14)*
+
+* Security: An Insecure Direct Object Reference was fixed that allowed unauthorized comment editing.
+* Security: Potential CSRF vectors were closed, including one that could allow account hijacking.
+* Fixes issue where enabling cleditor would permanently allow style parameter in comments.
+* Fixes issue notifying users of new comments in certain cases where they did not have permission to then view them.
+* Fixes OpenID bug effecting Google Sign In.
+* Multiple community-contributed bug fixes.
+* 2.1.4 had a merge conflict which this release replaced.
+
+### 2.1.3
+*[Released 9 Sept 2014](http://vanillaforums.org/discussion/27822/vanilla-2-1-3-security-release)*
+
+* 3 newly discovered XSS vectors were fixed.
+* The timezone bug introduced in 2.1.1 is fixed.
+* Fixes invalid DeliveryType in plugins management.
+* 2.1.2 had a Javascript error which this release replaced.
+
+### 2.1.1
+
+*[Released 2 Aug 2014](http://vanillaforums.org/discussion/27540/vanilla-2-1-1-important-security-bug-release)*
+
+
+* HtmLawed was upgraded to close an XSS vector (thanks to Psych0tr1a for responsibly disclosing this to us & to HtmLawed for a fast patch in response).
+* Multiple XSS exploits were fixed (thanks to @x00 for responsibly disclosing and both he and @businessdad for assistance in making our patches as bulletproof as possible).
+* Fixed a Twitter SSL bug (thanks @Adrian for the patch).
+* Fixed a missing permission check in the sorting utility (thanks @R_J for the patch).
+* cleditor was patched to fix a crippling IE11 bug.
+* Profile Extender was upgraded and a security flaw in it was fixed.
+* Fixed a bug in Announcing while starting a discussion.
+* Corrected the default theme README.
+* Backported GDN_UserAuthenticationProvider.IsDefault so the latest version of jsConnect will work with 2.1.1.
+* Fixes a theme screenshot bug (thanks @hgtonight‌ for the patch).
+
+
+### 2.1
 
 *[Released 28 April 2014](http://vanillaforums.org/discussion/26685/vanilla-2-1-stable-released)*
 
@@ -30,6 +74,21 @@ Incremental changelogs from the [first 2.1 beta](http://vanillaforums.org/discus
 
 2.0.18
 ===
+
+### 2.0.18.14
+*[Released 30 Oct 2014](http://vanillaforums.org/discussion/28337/vanilla-2-1-5-released-and-2-0-18-14)*
+
+* Security: An Insecure Direct Object Reference was fixed that allowed unauthorized comment editing.
+* Security: Potential CSRF vectors were closed, including one that could allow account hijacking.
+* Fixes DeliveryType issue in plugins managements.
+
+### 2.0.18.13
+*[Released 5 Aug 2014](http://vanillaforums.org/discussion/27541/vanilla-2-0-18-13-security-release-for-old-2-0-18-installs)*
+
+* HtmLawed is upgraded and its filtering tightened (thanks @x00 & Psych0tr1a)
+* parseJSON() is substituted for eval() in 2 places
+* Refactored the definitions list into Javascript instead of using the DOM
+* Fixes HTMLawed error in 2.0.18.12 which this immediately replaced.
 
 ### 2.0.18.11  
 *[Released 21 Apr 2014](http://vanillaforums.org/discussion/26627/vanilla-2-0-18-11-security-release)*

@@ -1,6 +1,6 @@
 # Vanilla Docs
 
-[![Build Status](http://img.shields.io/travis/vanilla/vanilladocs/master.svg?style=flat)](https://travis-ci.org/vanilla/vanilladocs)
+[![Build Status](http://img.shields.io/travis/vanilla/vanilladocs/master.svg?style=flat)](https://travis-ci.org/vanilla/vanilladocs) [![Dependency Status](http://img.shields.io/gemnasium/vanilla/vanilladocs.svg?style=flat)](https://gemnasium.com/vanilla/vanilladocs) [![Open Issues](http://img.shields.io/github/issues/vanilla/vanilladocs.svg?style=flat)](https://github.com/vanilla/vanilladocs/issues)
 
 ## Contributing
 
@@ -20,7 +20,21 @@ The "Workflow" folder is teams collaborating with Vanilla Forums, Inc. on projec
 
 * Every doc file must end in `.html.md` and be formatted in Markdown.
 * Please use H2 (`##` in Markdown) as your top-level headings in each file.
-* Always use an `images` folder in the same subfolder as the content referencing it.
+* All images go within [`docs/images`](docs/images) and must be referenced absolutely (`/images/foo.png`).
+
+### YAML Meta
+
+The following meta data can be defined in the YAML Front Matter block of each document:
+
+Key           | Type    | Description
+---           | ---     | ---
+`title`       | String  | Title of the page. Will appear in the search results, breadcrumbs, sidebar, and `<title>` tag.
+`description` | String  | Description used in the `<meta name="description">` tag.
+`categories`  | Array   | Array of document categories. Used for the search results.
+`order`       | Integer | Document order. Used for sorting in breadcrumbs and sidebar (low to high).
+`menu`        | String  | Optional title for use in breadcrumbs and sidebar.
+`hidden`      | Boolean | Whether or not to hide the document from breadcrumbs and sidebar.
+`keywords`    | Array   | Array of keywords used in the `<meta name="keywords">` tag.
 
 ## Running locally
 

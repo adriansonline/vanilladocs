@@ -4,22 +4,36 @@ layout: docs
 categories: ["Developers", "Contributing"]
 ---
 
-This guide extends and expands on [PSR-1], the basic coding standard and
- [PSR-2], the coding style guide.
+# Coding Standard
 
-The intent of this guide is to reduce cognitive friction when scanning code
-from different authors. It does so by enumerating a shared set of rules and
-expectations about how to format PHP code.
+As of May 2014, Vanilla will adhere to [PSR-2] (and therefore [PSR-1]) with a few exceptions. We have been mass-updating our source code as possible without breaking backwards compatibility (most notably by refraining from changing the casing of existing variables).
 
-The style rules herein are derived from commonalities among the various member
-projects. When various authors collaborate across multiple projects, it helps
-to have one set of guidelines to be used among all those projects. Thus, the
-benefit of this guide is not in the rules themselves, but in the sharing of
-those rules.
+We've named our primary exception to PSR-2 the **[Lord Brackos](https://twitter.com/linc/status/462308222427480065)** rule - Same-line open braces on all classes, method, and function definitions.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119].
+We adopted this standard for all the usual reasons: our team is growing, and we want to make sure things stay consistent between our various projects, and it's annoying and hard to read when everything is styled differently. Key words in this document ("MUST", "SHOULD", etc.) are used as described in [RFC 2119] which is as boring and obvious as you expect but mercifully brief.
+
+## PHP Version
+
+All code in `master` must work under PHP 5.4.
+
+All code in `release/2.2` must work under PHP 5.3.
+
+We currently plan to move to PHP 5.5 after the fork for 2.3. These plans may change with little notice.
+
+## Check out CodeSniffer
+
+CodeSniffer is a tool you can plug into your IDE to help you adhere to a coding standard like this one. This quick guide assumes you have both PEAR and homebrew with PHP 5.5 installed. 
+
+Our standard is in [Vanilla's Addons repo](http://github.com/vanillaforums/addons), where you can submit issues and pull requests. Its contents will help you on your way.
+
+1. Get CodeSniffer: `pear install PHP_CodeSniffer`.
+2. Add to bash profile: `export PATH="$(brew --prefix php55)/bin:$PATH"`.
+3. Find CodeSniffer's Standards folder. Use `pear config-get php_dir` and go from there.
+3. Symlink `addons/standards/Vanilla/` to CodeSniffer's Standards folder.
+4. Set Vanilla as your standard: `phpcs --config-set default_standard Vanilla`.
+5. Use it: `phpcs /path/to/code`.
+
+Thus ends the readable part of your adventure as you descend into the dry, technical blather of a coding standard. Godspeed, coding warrior.
 
 [RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
 [PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
@@ -253,7 +267,7 @@ class Foo {
 The `extends` and `implements` keywords MUST be declared on the same line as
 the class name.
 
-The opening brace for the class MUST go on its own line; the closing brace
+The opening brace for the class MUST go on the same line as the class name; the closing brace
 for the class MUST go on the next line after the body.
 
 ```php
@@ -311,7 +325,7 @@ Method names SHOULD NOT be prefixed with a single underscore to indicate
 protected or private visibility.
 
 Method names MUST NOT be declared with a space after the method name. The
-opening brace MUST go on its own line, and the closing brace MUST go on the
+opening brace MUST go on the same line as the method name, and the closing brace MUST go on the
 next line following the body. There MUST NOT be a space after the opening
 parenthesis, and there MUST NOT be a space before the closing parenthesis.
 
@@ -336,7 +350,7 @@ The major exception to this rule is Event Methods.  Any method that has the foll
 '_before',
 '_override',
 '_after',
-'controller_
+'controller_'
 ```
 
 Event methods MUST be `camelCase` separated by `_`.

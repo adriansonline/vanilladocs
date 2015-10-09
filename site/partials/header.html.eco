@@ -1,25 +1,30 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container<%= "-fluid" if @fluid %>">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a class="navbar-brand" href="/"><img class="logo" src="/assets/img/logo.svg" alt="Vanilla Forums"> Docs</a>
+      <a class="navbar-brand" href="/">
+        <img class="logo" src="/assets/img/logo.svg" alt="Vanilla Forums" width="102" height="41"> Docs
+      </a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse">
       <div class="navbar-form navbar-left">
-        <%- @partial('search') %>
+        <div class="dropdown js-search" role="search">
+          <div class="form-group">
+            <input class="form-control js-search-input" id="docs-search" type="text" title="Search the documentation" placeholder="Search">
+          </div>
+          <ul class="dropdown-menu dropdown-search-results js-search-results">
+            <li>
+              <a>
+                <span class="title"></span>
+                <span class="categories"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-	<li><a href="http://vanillaforums.com">Cloud Hosted Community</a></li>
+        <li><a href="http://vanillaforums.com">Cloud Hosted Community</a></li>
         <li><a href="http://vanillaforums.org">Open Source Community</a></li>
       </ul>
     </div>

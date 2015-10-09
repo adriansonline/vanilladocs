@@ -5,14 +5,17 @@ module.exports = {
     'clean'
   , 'docs'
   , 'less'
+  , 'autoprefixer'
   , 'copy'
+  , 'uncss'
   , 'useminPrepare'
   , 'concat'
   , 'uglify'
   , 'cssmin'
-  , 'rev'
+  , 'filerev'
   , 'usemin'
   , 'htmlmin'
+  , 'manifest'
   ]
 , serve: [
     'docs'
@@ -24,6 +27,7 @@ module.exports = {
 , deploy: [
     'wiredep'
   , 'build'
+  //, 'cdnify'
   , 'gh-pages'
   ]
 , default: [
